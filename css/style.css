@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 100%, 100%);
+    --purple100: hsl(275, 100%, 97%);
+    --purple600: hsl(292, 16%, 49%);
+    --purple950: hsl(292, 42%, 14%);
+    --active-color: #AD28EB;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--purple100);
+    font-family: "Work Sans", sans-serif;
+    color: var(--purple950);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+main {    
+    margin-top: 50px;
+    background-color: var(--white);
+    max-width: 600px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;    
+    width: calc(100% - 40px); /* for mobile */
+}
+
+h1 img{
+    margin: 0 15px 0 10px;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 2.75rem;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--purple600);
+}
+
+.faq-item {
+    margin: 10px;
+}
+
+.faq-question {
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--white);
+    color: var(--purple950);
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.icon-plus {
+    margin-left: 25px;
+}
+
+.faq-question.active {
+      color: var(--active-color);
+    }
+
+footer {
+    margin-top: auto; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+}
+
+.attribution {
+    font-size: 13px;
+    text-align: center;
+    color: var(--purple600);
+    margin-top: 20px;
+}
+
+.attribution a {
+    color: var(--purple950);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .banner {
+        content: url("assets/images/background-pattern-mobile.svg");
+        margin-top: 0; 
+    }
+
+    main {
+        margin-top: 120px;
+    }
+}
